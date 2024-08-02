@@ -16,6 +16,11 @@
 - Docker - https://www.docker.com/
 - NodeJS - You need Node > 18 for this project.
 
+### Things to Remember:
+
+You need Docker and Firebase to run the project.
+Every time the project is taken down, all the PostgreSQL tables are dropped, and you should take down Firebase Auth Emulator and restart it if you restart the project. This is only required for development environments.
+
 ## 2) Demo
 
 ### 2.1) Sign In Page (Firebase Auth)
@@ -100,3 +105,6 @@ npm run dev
 
 ### 3.7) To access the API documentation, run the project and access:
 http://localhost:3000/api-docs
+
+### 3.8) Front-end runs by default on:
+http://localhost:5173/
