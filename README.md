@@ -2,7 +2,7 @@
 
 ### Proposal: Creating investment portfolios in different companies and investing in them!
 
-## Easy Setup Video Guide: https://www.youtube.com/watch?v=UmG87EpC-pI
+### Easy Setup Video Guide: https://www.youtube.com/watch?v=UmG87EpC-pI
 
 ## 1) What was used?
 
