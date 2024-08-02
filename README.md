@@ -16,7 +16,7 @@
 - Swagger - https://swagger.io/
 - Tailwind - https://tailwindcss.com/
 - Docker - https://www.docker.com/
-- NodeJS - You need Node > 18 for this project.
+- NodeJS - You need Node >= 18 for this project.
 
 ### Things to Remember:
 
