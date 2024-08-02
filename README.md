@@ -17,30 +17,30 @@
 
 ### 2.1) Sign In Page (Firebase Auth)
 
-https://imgur.com/J4YrfUZ
+![Sign In Page](https://i.imgur.com/J4YrfUZ.png)
 
 ### 2.2) Sign Up Page (Firebase Auth)
 
-https://imgur.com/UmAwB9I
+![Sign Up Page](https://i.imgur.com/UmAwB9I.png)
 
 ### 2.3) Portfolios Page
 
-https://imgur.com/2XtHVjD
-https://imgur.com/hThueBJ
-https://imgur.com/Y5GhcFl
+![Portfolios Page](https://i.imgur.com/2XtHVjD.png)
+![Portfolios Page](https://i.imgur.com/hThueBJ.png)
+![Portfolios Page](https://i.imgur.com/Y5GhcFl.png)
 
-### 2.4) Portfolis Details Page
+### 2.4) Portfolio Details Page
 
-https://imgur.com/op0Cplu
-https://imgur.com/LYKrpAU
+![Portfolio Details Page](https://i.imgur.com/op0Cplu.png)
+![Portfolio Details Page](https://i.imgur.com/LYKrpAU.png)
 
 ### 2.5) Companies Page
 
-https://imgur.com/lLN4Uno
+![Companies Page](https://i.imgur.com/lLN4Uno.png)
 
 ### 2.6) Swagger API
 
-https://imgur.com/ML3nTUB
+![Swagger API](https://i.imgur.com/ML3nTUB.png)
 
 ## 3) Installation
 
