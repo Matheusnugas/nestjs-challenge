@@ -97,3 +97,6 @@ firebase emulators:start
 ```sh
 npm run dev
 ```
+
+### 3.7) To access the API documentation, run the project and access:
+http://localhost:3000/api-docs
