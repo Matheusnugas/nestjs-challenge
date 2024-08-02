@@ -1,0 +1,19 @@
+{
+  "name": "bossa-challenge",
+  "version": "1.0.0",
+  "packageManager": "npm@8.0.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "start": "node apps/api/dist/src/main",
+    "install-all": "(npm install && cd apps && cd web && npm install)"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.9"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}

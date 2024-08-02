@@ -1,0 +1,46 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": [".env", "tsconfig.json"],
+    "globalEnv": ["DATABASE_URL", "NODE_ENV"],
+    "globalPassThroughEnv": ["GITHUB_TOKEN"],
+    "ui": "stream",
+    "tasks": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "test": {
+        "dependsOn": ["build"],
+        "outputs": ["coverage/**"]
+      },
+      "dev": {
+        "cache": false,
+        "persistent": true
+      },
+      "api#build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "web#build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "api#dev": {
+        "cache": false,
+        "persistent": true
+      },
+      "web#dev": {
+        "cache": false,
+        "persistent": true
+      },
+      "api#test": {
+        "dependsOn": ["api#build"],
+        "outputs": ["coverage/**"]
+      },
+      "web#test": {
+        "dependsOn": ["web#build"],
+        "outputs": ["coverage/**"]
+      }
+    }
+  }
+  
