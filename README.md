@@ -54,7 +54,7 @@ Every time the project is taken down, all the PostgreSQL tables are dropped, and
 
 ## 3) Installation
 
-### 3.1) Enter the root of the project and run "yarn" to start installing the default project dependencies.
+### 3.1) Enter the root of the project and run "npm run install-all" to start installing the default project dependencies.
 
 ```sh
 npm run install-all
