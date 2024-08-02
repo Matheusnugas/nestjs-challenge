@@ -17,23 +17,22 @@
 
 ### 2.1) Sign In Page (Firebase Auth)
 
-[[![N|Solid](https://i.imgur.com/sI615as.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/J4YrfUZ)
+https://imgur.com/J4YrfUZ
 
 ### 2.2) Sign Up Page (Firebase Auth)
 
-[[![N|Solid](https://i.imgur.com/tRIRJcH.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/UmAwB9I)
+https://imgur.com/UmAwB9I
 
-### 2.3) Portfolis Page
+### 2.3) Portfolios Page
 
-[[![N|Solid](https://i.imgur.com/8D9wCmQ.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/2XtHVjD)
-[[![N|Solid](https://i.imgur.com/ldzoRRc.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/hThueBJ)
+https://imgur.com/2XtHVjD
+https://imgur.com/hThueBJ
 https://imgur.com/Y5GhcFl
-
 
 ### 2.4) Portfolis Details Page
 
-[[[![N|Solid](https://i.imgur.com/8D9wCmQ.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/2XtHVjD)](https://imgur.com/op0Cplu)
-[[[![N|Solid](https://i.imgur.com/ldzoRRc.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/hThueBJ)](https://imgur.com/LYKrpAU)
+https://imgur.com/op0Cplu
+https://imgur.com/LYKrpAU
 
 ### 2.5) Companies Page
 
@@ -41,7 +40,7 @@ https://imgur.com/lLN4Uno
 
 ### 2.6) Swagger API
 
-[[![N|Solid](https://i.imgur.com/XlObMPA.jpg)](https://nodesource.com/products/nsolid)](https://imgur.com/ML3nTUB)
+https://imgur.com/ML3nTUB
 
 ## 3) Installation
 
