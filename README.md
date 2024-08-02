@@ -7,6 +7,7 @@
 - Monorepo (TurboRepo) - https://turbo.build/
 - NestJS - https://nestjs.com/
 - PostgreSQL - https://www.postgresql.org/
+- Prisma ORM - https://www.prisma.io/
 - React JS - https://pt-br.reactjs.org/
 - Vite - https://vitejs.dev/
 - Firebase - https://firebase.google.com/?hl=pt-br
