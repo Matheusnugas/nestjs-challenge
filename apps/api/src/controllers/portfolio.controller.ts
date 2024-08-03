@@ -12,7 +12,7 @@ import {
 import { PortfolioService } from '../services/portfolio.service';
 import { CreatePortfolioDto } from '../dto/create-portfolio.dto';
 import { UpdatePortfolioDto } from '../dto/update-portfolio.dto';
-import { FirebaseAuthGuard } from 'src/guards/firebase-auth.guard';
+import { FirebaseAuthGuard } from '../guards/firebase-auth.guard';
 import {
   ApiBearerAuth,
   ApiOperation,
