@@ -110,3 +110,6 @@ http://localhost:3000/api-docs
 
 ### 3.8) Front-end runs by default on:
 http://localhost:5173/
+
+### 3.9) Back-end runs by default on:
+http://localhost:3000/
