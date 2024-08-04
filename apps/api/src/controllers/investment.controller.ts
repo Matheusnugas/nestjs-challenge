@@ -52,6 +52,8 @@ export class InvestmentController {
     );
   }
 
+  //
+
   @Get(':id')
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get an investment by ID' })
