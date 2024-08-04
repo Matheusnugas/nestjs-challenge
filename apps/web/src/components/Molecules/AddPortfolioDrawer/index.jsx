@@ -4,13 +4,11 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 function AddPortfolioDrawer({ isOpen, onClose, children }) {
   return (
     <div className={`fixed inset-0 z-50 ${isOpen ? "block" : "hidden"}`}>
-      {/* Overlay */}
       <div
         className="fixed inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
 
-      {/* Drawer */}
       <div
         className={`fixed right-0 top-0 h-full w-80 bg-challenge-dark-4 p-4 shadow-lg transform transition-transform ${
           isOpen ? "animate-slideInRight" : "translate-x-full"

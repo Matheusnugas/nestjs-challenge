@@ -30,8 +30,7 @@ function PortfolioCard({ portfolio }) {
 
   useEffect(() => {
     fetchInvestments(portfolio);
-    console.log("alo");
-  });
+  }, []);
 
   function sumInvestmentAmount(investments) {
     const total = investments

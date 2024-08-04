@@ -8,6 +8,7 @@ import {
   Body,
   UseGuards,
   Headers,
+  Req,
 } from '@nestjs/common';
 import { PortfolioService } from '../services/portfolio.service';
 import { CreatePortfolioDto } from '../dto/create-portfolio.dto';
@@ -18,23 +19,18 @@ import {
   ApiOperation,
   ApiResponse,
   ApiTags,
-  ApiHeader,
 } from '@nestjs/swagger';
 import { PortfolioDto } from '../dto/portfolio.dto';
 
 @Controller('portfolios')
 @ApiTags('portfolios')
+@ApiBearerAuth('access-token')
 @UseGuards(FirebaseAuthGuard)
 export class PortfolioController {
   constructor(private readonly portfolioService: PortfolioService) {}
 
   @Post(':authId')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Create a new portfolio' })
   @ApiResponse({
     status: 201,
@@ -44,9 +40,10 @@ export class PortfolioController {
   async createPortfolio(
     @Param('authId') authId: string,
     @Body() createPortfolioDto: CreatePortfolioDto,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
+    @Req() req: any,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.portfolioService.createPortfolio(
       authId,
       createPortfolioDto,
@@ -56,11 +53,6 @@ export class PortfolioController {
 
   @Get('user/:authId')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Get portfolios by user authId' })
   @ApiResponse({
     status: 200,
@@ -71,9 +63,9 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolios not found.' })
   async getPortfoliosByUserAuthId(
     @Param('authId') authId: string,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.portfolioService.getPortfoliosByUserAuthId(
       authId,
       userCredentials,
@@ -82,11 +74,6 @@ export class PortfolioController {
 
   @Get(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Get a portfolio by ID' })
   @ApiResponse({
     status: 200,
@@ -97,19 +84,14 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolio not found.' })
   async getPortfolio(
     @Param('id') id: number,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.portfolioService.getPortfolio(Number(id), userCredentials);
   }
 
   @Put(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Update an existing portfolio' })
   @ApiResponse({
     status: 200,
@@ -120,9 +102,9 @@ export class PortfolioController {
   async updatePortfolio(
     @Param('id') id: number,
     @Body() updatePortfolioDto: UpdatePortfolioDto,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.portfolioService.updatePortfolio(
       Number(id),
       updatePortfolioDto,
@@ -132,11 +114,6 @@ export class PortfolioController {
 
   @Delete(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Delete a portfolio by ID' })
   @ApiResponse({
     status: 200,
@@ -146,9 +123,9 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolio not found.' })
   async deletePortfolio(
     @Param('id') id: number,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.portfolioService.deletePortfolio(Number(id), userCredentials);
   }
 }

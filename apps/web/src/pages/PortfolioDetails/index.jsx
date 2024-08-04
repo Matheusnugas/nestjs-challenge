@@ -76,7 +76,6 @@ function PortfolioDetails(props) {
       const response = await PortfolioApi.getPortfolioById(portfolioId);
       if (response && response.data) {
         setPortfolio(response.data);
-        console.log(response.data);
       }
     } catch (error) {
       console.error("Error fetching this portfolio:", error);
@@ -97,7 +96,6 @@ function PortfolioDetails(props) {
       );
       if (response && response.data) {
         setInvestments(response.data);
-        console.log(response.data);
       }
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -113,16 +111,11 @@ function PortfolioDetails(props) {
       const response = await CompaniesApi.getCompanies();
       if (response && response.data) {
         setCompanies(response.data);
-        console.log(response.data);
       }
     } catch (error) {
       console.error("Error fetching Companies:", error);
     }
   }
-
-  useEffect(() => {
-    console.log(companies);
-  }, [companies]);
 
   async function deletePortfolio(portfolioId) {
     const result = await Swal.fire({

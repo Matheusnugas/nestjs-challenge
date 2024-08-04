@@ -4,6 +4,7 @@ import { auth } from "../../lib/configs/firebase.config";
 import { Link, useNavigate } from "react-router-dom";
 import LocalStorage from "../../utils/storage";
 import Swal from "sweetalert2";
+import AuthApi from "../../services/auth";
 
 function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -25,8 +26,10 @@ function Login() {
         credentials.password
       );
       if (response) {
-        console.log(response);
-        console.log(auth.currentUser.getIdToken);
+        console.log({
+          authId: response.user.uid,
+          userToken: response._tokenResponse.idToken,
+        });
         LocalStorage.setStorageData("userUid", response.user.uid);
       }
     } catch (error) {

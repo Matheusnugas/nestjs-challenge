@@ -24,12 +24,12 @@ import { InvestmentDto } from 'src/dto/investment.dto';
 
 @Controller('investments')
 @ApiTags('investments')
+@ApiBearerAuth('access-token')
 @UseGuards(FirebaseAuthGuard)
 export class InvestmentController {
   constructor(private readonly investmentService: InvestmentService) {}
 
   @Post()
-  @ApiBearerAuth()
   @ApiHeader({
     name: 'Authorization',
     description: 'Authorization token',
@@ -43,9 +43,9 @@ export class InvestmentController {
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async createInvestment(
     @Body() createInvestmentDto: CreateInvestmentDto,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.investmentService.createInvestment(
       createInvestmentDto,
       userCredentials,
@@ -54,11 +54,6 @@ export class InvestmentController {
 
   @Get(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Get an investment by ID' })
   @ApiResponse({
     status: 200,
@@ -69,19 +64,14 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investment not found.' })
   async getInvestment(
     @Param('id') id: number,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.investmentService.getInvestment(Number(id), userCredentials);
   }
 
   @Get('portfolio/:portfolioId')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Get investments by portfolio ID' })
   @ApiResponse({
     status: 200,
@@ -92,9 +82,9 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investments not found.' })
   async getInvestmentsByPortfolioId(
     @Param('portfolioId') portfolioId: number,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.investmentService.getInvestmentsByPortfolioId(
       Number(portfolioId),
       userCredentials,
@@ -103,11 +93,6 @@ export class InvestmentController {
 
   @Put(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Update an existing investment' })
   @ApiResponse({
     status: 200,
@@ -118,9 +103,9 @@ export class InvestmentController {
   async updateInvestment(
     @Param('id') id: number,
     @Body() updateInvestmentDto: UpdateInvestmentDto,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.investmentService.updateInvestment(
       id,
       updateInvestmentDto,
@@ -130,11 +115,6 @@ export class InvestmentController {
 
   @Delete(':id')
   @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Authorization token',
-    required: true,
-  })
   @ApiOperation({ summary: 'Delete an investment by ID' })
   @ApiResponse({
     status: 200,
@@ -144,9 +124,9 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investment not found.' })
   async deleteInvestment(
     @Param('id') id: number,
-    @Headers('credentials') credentials: string,
+    @Headers('credentials (authId)') credentials: string,
   ) {
-    const userCredentials = JSON.parse(credentials).id;
+    const userCredentials = credentials;
     return this.investmentService.deleteInvestment(Number(id), userCredentials);
   }
 }

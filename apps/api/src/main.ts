@@ -13,9 +13,22 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('API Documentation')
-    .setDescription('The API description')
+    .setDescription(
+      ` This API is for the management of investment Portfolios system. All the necessary routes need you to be authenticated, and one user cannot see, update or delete the data that belongs to another user.`,
+    )
     .setVersion('1.0')
-    .addTag('api')
+    .addOAuth2(
+      {
+        description: `Please enter the Firebase Bearer token you got by using the GenerateTestToken route`,
+        name: 'Authorization',
+        bearerFormat: 'Bearer',
+        scheme: 'Bearer',
+        type: 'http',
+        in: 'Header',
+      },
+      'access-token',
+    )
+
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);

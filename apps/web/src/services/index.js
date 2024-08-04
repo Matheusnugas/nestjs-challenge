@@ -66,22 +66,22 @@ api.interceptors.request.use(
       userId = auth.currentUser.uid;
     }
 
-    console.log({
-      headers: {
-        ...config.headers,
-        ...deviceInfo,
-        Authorization: token,
-        credentials: JSON.stringify({ id: userId }),
-      },
-    });
+    // console.log({
+    //   headers: {
+    //     ...config.headers,
+    //     ...deviceInfo,
+    //     Authorization: token,
+    //     credentials: userId,
+    //   },
+    // });
 
     return {
       ...config,
       headers: {
         ...config.headers,
         ...deviceInfo,
-        Authorization: token,
-        credentials: JSON.stringify({ id: userId }),
+        Authorization: `Bearer ${token}`,
+        credentials: userId,
       },
     };
   },

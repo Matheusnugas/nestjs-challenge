@@ -79,7 +79,6 @@ function Portfolios() {
       const response = await PortfolioApi.getUserPortfolios(uid);
       if (response && response.data) {
         setPortfolios(response.data);
-        console.log(response.data);
       }
     } catch (error) {
       console.error("Error fetching portfolios:", error);

@@ -13,8 +13,8 @@ import {
 import { UserDto } from '../dto/user.dto';
 
 @Controller('users')
+@ApiBearerAuth('access-token')
 @ApiTags('users')
-@ApiBearerAuth()
 @UseGuards(FirebaseAuthGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -37,7 +37,7 @@ export class UserController {
     return this.userService.getUser(id);
   }
 
-  @Put(':id')
+  @Put(':authId')
   @ApiOperation({ summary: 'Update a user by authId' })
   @ApiResponse({
     status: 200,
@@ -46,14 +46,14 @@ export class UserController {
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   @ApiResponse({ status: 404, description: 'User not found.' })
   @ApiParam({
-    name: 'id',
+    name: 'authId',
     description: 'The authId of the user',
     type: String,
   })
   async updateUserByAuthId(
-    @Param('authId') id: string,
+    @Param('authId') authId: string,
     @Body() updateUserDto: UpdateUserDto,
   ): Promise<User> {
-    return this.userService.updateUser(id, updateUserDto);
+    return this.userService.updateUser(authId, updateUserDto);
   }
 }
