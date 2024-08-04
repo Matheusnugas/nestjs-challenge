@@ -52,6 +52,12 @@ Every time the project is taken down, all the PostgreSQL tables are dropped, and
 
 ![Swagger API](https://i.imgur.com/ML3nTUB.png)
 
+#### OBSERVATION:
+To test using the SwaggerAPI, first you will need to log in with the front end to get the user AuthId and Authorization Token.
+That happens because the Firebase Auth SDK does not allow it to be returned to the backend on sign in. Just check the console for the necessary information, right after logging in.
+
+![Console](https://imgur.com/i4fcZUq)
+
 ## 3) Installation
 
 ### 3.1) Enter the root of the project and run "npm run install-all" to start installing the default project dependencies.
