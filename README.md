@@ -58,6 +58,10 @@ That happens because the Firebase Auth SDK does not allow it to be returned to t
 
 ![Console](https://i.imgur.com/i4fcZUq.png)
 
+### 2.7) Firebase Auth Emulator
+
+![Firebase Auth](https://i.imgur.com/mUDQYuJ.png)
+
 ## 3) Installation
 
 ### 3.1) Enter the root of the project and run "npm run install-all" to start installing the default project dependencies.
@@ -66,7 +70,7 @@ That happens because the Firebase Auth SDK does not allow it to be returned to t
 npm run install-all
 ```
 
-### 3.2) Create an .env file  in the root of the web project for API access with the following:
+### 3.2) Create an .env file in the ROOT of the WEB project to access your back-end with the following:
 
 ```sh
 VITE_API_URL="http://localhost:3000"
