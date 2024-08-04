@@ -21,7 +21,7 @@
 ### Things to Remember:
 
 You need Docker and Firebase to run the project.
-Every time the project is taken down, all the PostgreSQL tables are dropped, and you should take down Firebase Auth Emulator and restart it if you restart the project. This is only required for development environments.
+Every time the project is taken down and restarted, all the PostgreSQL tables are dropped, and you should take down Firebase Auth Emulator and restart it if you restart the project. This is only required for development environments.
 
 ## 2) Demo
 
