@@ -14,12 +14,16 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('API Documentation')
     .setDescription(
-      ` This API is for the management of investment Portfolios system. All the necessary routes need you to be authenticated, and one user cannot see, update or delete the data that belongs to another user.`,
+      `This is the API for a Investment Portfolio Management system. Every task route requires the user to be authenticated. To get your Bearer token, create an account and login, and one will be provided to you. To get it, just log in with the front end, and check the console, it will be printed there. Don't forget to add your token to the Authorize field on Swagger API Docs. Token Format: 
+
+      Bearer <JWT>
+
+      `,
     )
     .setVersion('1.0')
-    .addOAuth2(
+    .addBearerAuth(
       {
-        description: `Please enter the Firebase Bearer token you got by using the GenerateTestToken route`,
+        description: `Please enter the Bearer token you got by signing in. Format: Bearer <JWT>`,
         name: 'Authorization',
         bearerFormat: 'Bearer',
         scheme: 'Bearer',
@@ -28,7 +32,6 @@ async function bootstrap() {
       },
       'access-token',
     )
-
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
