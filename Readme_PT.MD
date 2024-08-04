@@ -97,6 +97,7 @@ vJqPY+l3RGspEt5aNaytmS1ciUs71rPpBhc6h8CUiHJ0gj9BbB3g4Meo0fMoqkdb
 cFno8/884ZnZZgiZPTNiji9RmqO4nIqqqzsMB+l/kVTob8p+fhKiVYQ+H/N09v+d
 hi+PBMu5OSRogatazK4fQZRR5koXPwMYVFhdVJ0Dr4TtGOfeIL+CQBoEFUC1OOsI
 xdevDckzAgMBAAECggEACxFijYTeK6XcTIElOLZLGfOMXv9CzQPCVoOqyBd0UJ...
+```
 
 ### 3.4) Crie o banco de dados PostgreSQL usando o Docker:
 ```sh
