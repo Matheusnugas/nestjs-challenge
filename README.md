@@ -56,7 +56,7 @@ Every time the project is taken down, all the PostgreSQL tables are dropped, and
 To test using the SwaggerAPI, first you will need to log in with the front end to get the user AuthId and Authorization Token.
 That happens because the Firebase Auth SDK does not allow it to be returned to the backend on sign in. Just check the console for the necessary information, right after logging in.
 
-![Console](https://imgur.com/i4fcZUq)
+![Console](https://i.imgur.com/i4fcZUq.png)
 
 ## 3) Installation
 
