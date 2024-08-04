@@ -43,7 +43,7 @@ export class InvestmentController {
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async createInvestment(
     @Body() createInvestmentDto: CreateInvestmentDto,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.investmentService.createInvestment(
@@ -66,7 +66,7 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investment not found.' })
   async getInvestment(
     @Param('id') id: number,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.investmentService.getInvestment(Number(id), userCredentials);
@@ -84,7 +84,7 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investments not found.' })
   async getInvestmentsByPortfolioId(
     @Param('portfolioId') portfolioId: number,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.investmentService.getInvestmentsByPortfolioId(
@@ -105,7 +105,7 @@ export class InvestmentController {
   async updateInvestment(
     @Param('id') id: number,
     @Body() updateInvestmentDto: UpdateInvestmentDto,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.investmentService.updateInvestment(
@@ -126,7 +126,7 @@ export class InvestmentController {
   @ApiResponse({ status: 404, description: 'Investment not found.' })
   async deleteInvestment(
     @Param('id') id: number,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.investmentService.deleteInvestment(Number(id), userCredentials);

@@ -17,6 +17,7 @@ export class PortfolioService {
     data: CreatePortfolioDto,
     credentials: string,
   ): Promise<Portfolio> {
+    console.log(authId, credentials);
     if (authId !== credentials) {
       throw new UnauthorizedException(
         "You can't create a portfolio for this user.",

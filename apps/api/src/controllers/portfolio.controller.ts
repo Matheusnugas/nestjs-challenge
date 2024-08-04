@@ -40,8 +40,7 @@ export class PortfolioController {
   async createPortfolio(
     @Param('authId') authId: string,
     @Body() createPortfolioDto: CreatePortfolioDto,
-    @Headers('credentials (authId)') credentials: string,
-    @Req() req: any,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.portfolioService.createPortfolio(
@@ -63,7 +62,7 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolios not found.' })
   async getPortfoliosByUserAuthId(
     @Param('authId') authId: string,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.portfolioService.getPortfoliosByUserAuthId(
@@ -84,7 +83,7 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolio not found.' })
   async getPortfolio(
     @Param('id') id: number,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.portfolioService.getPortfolio(Number(id), userCredentials);
@@ -102,7 +101,7 @@ export class PortfolioController {
   async updatePortfolio(
     @Param('id') id: number,
     @Body() updatePortfolioDto: UpdatePortfolioDto,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.portfolioService.updatePortfolio(
@@ -123,7 +122,7 @@ export class PortfolioController {
   @ApiResponse({ status: 404, description: 'Portfolio not found.' })
   async deletePortfolio(
     @Param('id') id: number,
-    @Headers('credentials (authId)') credentials: string,
+    @Headers('credentials') credentials: string,
   ) {
     const userCredentials = credentials;
     return this.portfolioService.deletePortfolio(Number(id), userCredentials);

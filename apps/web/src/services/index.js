@@ -66,14 +66,7 @@ api.interceptors.request.use(
       userId = auth.currentUser.uid;
     }
 
-    // console.log({
-    //   headers: {
-    //     ...config.headers,
-    //     ...deviceInfo,
-    //     Authorization: token,
-    //     credentials: userId,
-    //   },
-    // });
+    console.log(`Bearer ${token}`);
 
     return {
       ...config,

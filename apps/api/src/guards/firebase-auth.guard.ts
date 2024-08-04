@@ -11,7 +11,6 @@ export class FirebaseAuthGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
     const token = request.headers.authorization;
-    console.log(token);
 
     if (!token) {
       throw new UnauthorizedException('Authorization token not found');
