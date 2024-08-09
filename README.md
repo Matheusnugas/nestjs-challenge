@@ -1,6 +1,7 @@
 # Galactic Trading Network
 
 ### Proposal: Creating investment portfolios in different companies and investing in them!
+## This is a challenge for the company Bossa Invest.
 
 ### Easy Setup Video Guide: https://www.youtube.com/watch?v=UmG87EpC-pI
 
